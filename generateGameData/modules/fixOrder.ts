@@ -11,7 +11,10 @@ export default function fixOrder(obj) {
   if (obj.constructor === RawJson || obj.constructor === NestedRawJson || obj.constructor === Object) {
     const indexes = []; // создание объекта с ключами + индекс
     Object.keys(obj).forEach((key) => {
-      const elem = {};
+      const elem = {
+        index: null,
+        key: null
+      };
       elem.index = (headers.includes(key)) ? headers.indexOf(key) : 666;
       elem.key = key;
       indexes.push(elem);

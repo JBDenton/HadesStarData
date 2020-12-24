@@ -57,5 +57,5 @@ export default async function loadFile(fileName, data) {
  */
 export function readCsv(file) {
   const pathCsv = join(pathCSVs, '/', file) + '.csv';
-  return csvToJson(readFileSync(pathCsv, 'utf8'));
+  return csvToJson(readFileSync(pathCsv, 'utf8'), []);
 }

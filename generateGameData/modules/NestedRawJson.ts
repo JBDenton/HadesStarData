@@ -2,13 +2,14 @@ import combineObjects from './combineObjects.js';
 
 /** Вложенные объекты в основном */
 export default class NestedRawJson extends Object {
+  maxLevel: Number
   /**
      * Заполнить пространство для соответствия уровню
      * @param  {String|Number} spaceSymbol=0  Символ для заполнения "пробелов"
      * @param  {Boolean} usePush=false        Метод заполнения, в начало или в конец
      * @return {Object}                       Результат, помимо мутации основного объекта
    */
-  fillSpace(spaceSymbol = 0, usePush = false) {
+  fillSpace(spaceSymbol: any = 0, usePush = false) {
     const obj = this;
 
     for (const i of Object.keys(obj)) {

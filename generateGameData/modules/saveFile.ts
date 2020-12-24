@@ -41,7 +41,10 @@ export default function saveFile(json, type = 'js') {
   function addContent(json) {
     const needData = /(\w+)\..+?/.exec(json.metadata.originalFile)[1];
     const byType = byTypes[needData] || {};
-    const result = {};
+    const result = {
+      content: null,
+      export: null
+    };
     let registered = [];
 
     result.export = 'data';

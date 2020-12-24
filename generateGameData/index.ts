@@ -1,11 +1,9 @@
-'use strict';
-
 import {join} from 'path';
 import {readFile} from 'fs/promises';
-import {wipeDir, walkDir} from './modules/dirUtils.js';
-import loadFile from './modules/loadFile.js';
-import saveFile from './modules/saveFile.js';
-import fixOrder from './modules/fixOrder.js';
+import {wipeDir, walkDir} from './modules/dirUtils';
+import loadFile from './modules/loadFile';
+import saveFile from './modules/saveFile';
+import fixOrder from './modules/fixOrder';
 import {Command} from 'commander';
 
 const program = new Command();
@@ -13,8 +11,8 @@ const startTime = new Date().getTime();
 const pathCSVs = join('./rawData/');
 const pathSave = join('./data/');
 const optionalFiles = ['projectiles.csv', 'ship_spawners.csv', 'solar_system_gen_data.csv'].map((e) => join(pathCSVs, e));
-global.ignoringHeaders = ['maxLevel', 'Name', 'TID', 'TID_Description', 'Icon', 'SlotType', 'Model'];
 let files;
+ignoringHeaders = ['maxLevel', 'Name', 'TID', 'TID_Description', 'Icon', 'SlotType', 'Model'];
 
 program
     .version('0.0.1')

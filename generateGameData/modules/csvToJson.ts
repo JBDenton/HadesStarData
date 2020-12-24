@@ -13,10 +13,10 @@ trashHeaders.forEach((e, i, arr) => {
  * @param  {Array=} headers=[]  Заголовки. По умолчанию первая строчка таблицы
  * @return {Object}             Результат
  */
-export default function csvToJson(csv, headers) {
+export default function csvToJson(csv: String, headers:Array<String>) {
   const regexSplitStr = new RegExp(',(?!\\s)');
   const data = csv.trim().split(/\r?\n/);
-  if (!headers) headers = data[0].split(regexSplitStr);
+  if (!headers.length) headers = data[0].split(regexSplitStr);
   const json = new RawJson();
   let subName = null;
 
